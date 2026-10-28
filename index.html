@@ -6,13 +6,12 @@
     <title>Re:Space - 대전 청년 유휴공간 재생 지도</title>
     
     <!-- 지도 라이브러리 (Leaflet.js) -->
-    <link rel="stylesheet" href="https://unpkg.com" />
-    <script src="https://unpkg.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     
-    <!-- 세련된 프리텐다드 폰트 -->
     <link rel="stylesheet" as="style" crossorigin href="https://jsdelivr.net" />
 
-    <!-- 외부 스타일시트 연결 -->
+    <!-- 스타일시트 연결 -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -36,8 +35,8 @@
     <!-- 오른쪽 지도 영역 -->
     <div id="map"></div>
 
-    <!-- 외부 데이터 및 자바스크립트 연결 (순서가 매우 중요합니다!) -->
-    <script src="data.js"></script>
-    <script src="app.js"></script>
+    <!-- 외부 데이터 및 자바스크립트 연결 -->
+    <script src="data.js" defer></script>
+    <script src="app.js" defer></script>
 </body>
 </html>
