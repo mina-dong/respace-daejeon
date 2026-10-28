@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re:Space - 대전 청년 유휴공간 재생 지도</title>
+    
+    <!-- 지도 라이브러리 (Leaflet.js) -->
+    <link rel="stylesheet" href="https://unpkg.com" />
+    <script src="https://unpkg.com"></script>
+    
+    <!-- 세련된 프리텐다드 폰트 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://jsdelivr.net" />
+
+    <!-- 외부 스타일시트 연결 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 왼쪽 사이드바 대시보드 -->
+    <div id="sidebar">
+        <div class="brand-header">
+            <div class="tagline">Daejeon Youth Platform</div>
+            <h1>Re<span>:</span>Space</h1>
+            <p>대전 청년분과 유휴공간 재생 프로젝트.<br>비어있는 공간을 우리들의 활력으로 다시 채웁니다.</p>
+        </div>
+        
+        <div class="space-list">
+            <div class="list-title">📍 재생 제안 후보지 리스트</div>
+            <div id="cardContainer">
+                <!-- 자바스크립트로 카드가 동적 생성됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 오른쪽 지도 영역 -->
+    <div id="map"></div>
+
+    <!-- 외부 데이터 및 자바스크립트 연결 (순서가 매우 중요합니다!) -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
