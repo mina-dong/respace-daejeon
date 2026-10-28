@@ -29,6 +29,23 @@ document.addEventListener("DOMContentLoaded", () => {
         map.invalidateSize();
     }, 100);
 
+    // 3.[추가] 커스텀 이미지 아이콘 정의
+    const customIcon = L.divIcon({
+        html: `<img src="marker.png" style="
+            width: 100%; 
+            height: 100%; 
+            filter: drop-shadow(1px 0 1px rgba(15, 32, 67, 0.6)) 
+                    drop-shadow(-1px 0 1px rgba(15, 32, 67, 0.6)) 
+                    drop-shadow(0 1px 1px rgba(15, 32, 67, 0.6)) 
+                    drop-shadow(0 -1px 1px rgba(15, 32, 67, 0.6));
+        ">`,
+        className: 'custom-marker-container',
+        iconUrl: 'marker.png',     // 이미지 파일 경로
+        iconSize:[60,60],        // 아이콘 크기 [가로, 세로] (필요에 따라 조절하세요)
+        iconAnchor:[30,60],      // 아이콘이 핀꽂힐 좌표 기준점 [가로 중심, 세로 바닥]
+        popupAnchor: [0, -60]      // 팝업창이 나타날 위치 [가로 offset, 세로 offset]
+    });
+
     // 3. UI 바인딩 및 지도 마커 렌더링
     const cardContainer = document.getElementById('cardContainer');
 
@@ -36,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cardContainer && typeof spaceData !== 'undefined') {
         spaceData.forEach((space) => {
             // 지도에 핀 꽂기
-            const marker = L.marker(space.coords).addTo(map);
+            const marker = L.marker(space.coords, {icon:customIcon}).addTo(map);
             
             // 마커 클릭 시 팝업 템플릿
             const popupHTML = `
